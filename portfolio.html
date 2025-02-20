@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio</title>
-    <link rel="stylesheet" href="styles.css">
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -25,15 +24,11 @@
             z-index: 1000;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
         }
-        nav {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
         nav ul {
             list-style: none;
             padding: 0;
             display: flex;
+            justify-content: center;
             gap: 25px;
         }
         nav ul li {
@@ -101,7 +96,6 @@
             text-align: center;
             padding: 15px;
             margin-top: 20px;
-            font-size: 16px;
         }
     </style>
 </head>
@@ -114,6 +108,7 @@
                 <li><a href="#education">Education</a></li>
                 <li><a href="#skills">Skills</a></li>
                 <li><a href="#achievements">Achievements</a></li>
+                <li><a href="#projects">Projects</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
         </nav>
@@ -121,7 +116,7 @@
     
     <section id="myself" class="slide">
         <h2>About Me</h2>
-        <p>Welcome to my portfolio! I am Jagadeesh G, a passionate web developer with a strong interest in coding and software development.</p>
+        <p>I am Jagadeesh G, a passionate web developer with a strong interest in coding and software development.</p>
     </section>
 
     <section id="education" class="slide">
@@ -136,9 +131,6 @@
             <li>Java</li>
             <li>HTML & CSS</li>
             <li>JavaScript</li>
-            <li>Problem Solving</li>
-            <li>Database Management</li>
-            <li>Cyber Security Basics</li>
         </ul>
     </section>
 
@@ -147,16 +139,21 @@
         <ul>
             <li>2-1 Semester Topper in Cyber Security</li>
             <li>Developed a personal portfolio website</li>
-            <li>Completed multiple coding challenges online</li>
-            <li>Participated in Hackathons</li>
+        </ul>
+    </section>
+
+    <section id="projects" class="slide">
+        <h2>Projects</h2>
+        <ul>
+            <li>Portfolio Website - A personal project showcasing my skills and experience.</li>
+            <li>Weather App - A web application that fetches real-time weather data.</li>
+            <li>Task Manager - A simple to-do app with a database backend.</li>
         </ul>
     </section>
     
     <section id="contact" class="slide">
         <h2>Contact</h2>
         <p>Email: jagadeeshg@example.com</p>
-        <p>LinkedIn: <a href="#">linkedin.com/in/jagadeeshg</a></p>
-        <p>GitHub: <a href="#">github.com/jagadeeshg</a></p>
         <form class="contact-form">
             <input type="text" placeholder="Your Name" required>
             <input type="email" placeholder="Your Email" required>
@@ -168,17 +165,5 @@
     <footer>
         <p>&copy; 2025 Jagadeesh G. All Rights Reserved.</p>
     </footer>
-    
-    <script>
-        document.querySelectorAll('nav ul li a').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
-                e.preventDefault();
-                const targetId = this.getAttribute('href').substring(1);
-                document.getElementById(targetId).scrollIntoView({
-                    behavior: 'smooth'
-                });
-            });
-        });
-    </script>
 </body>
 </html>
