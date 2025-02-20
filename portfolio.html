@@ -66,43 +66,30 @@
             transform: scale(1.08);
             box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
         }
-        h2 {
-            color: #222;
-        }
-        p, ul {
-            font-size: 18px;
-            color: #444;
-        }
-        .contact-form {
+        .skills-container {
             display: flex;
-            flex-direction: column;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        .skill {
+            width: 100px;
+            height: 100px;
+            display: flex;
             align-items: center;
-            gap: 10px;
-            margin-top: 20px;
+            justify-content: center;
+            border-radius: 10px;
+            background: white;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease-in-out;
         }
-        .contact-form input, .contact-form textarea {
+        .skill:hover {
+            transform: scale(1.1);
+        }
+        .skill img {
             width: 80%;
-            padding: 10px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-        }
-        .contact-form button {
-            background: #333;
-            color: white;
-            padding: 10px 20px;
-            border: none;
-            cursor: pointer;
-            transition: background 0.5s;
-        }
-        .contact-form button:hover {
-            background: #555;
-        }
-        footer {
-            background: rgba(0, 0, 0, 0.8);
-            color: white;
-            text-align: center;
-            padding: 15px;
-            margin-top: 20px;
+            height: 80%;
+            object-fit: contain;
         }
     </style>
 </head>
@@ -133,12 +120,12 @@
     
     <section id="skills" class="slide">
         <h2>Skills</h2>
-        <ul>
-            <li>Python</li>
-            <li>Java</li>
-            <li>HTML & CSS</li>
-            <li>JavaScript</li>
-        </ul>
+        <div class="skills-container">
+            <div class="skill"><img src="python-logo.png" alt="Python"></div>
+            <div class="skill"><img src="java-logo.png" alt="Java"></div>
+            <div class="skill"><img src="html-logo.png" alt="HTML"></div>
+            <div class="skill"><img src="css-logo.png" alt="CSS"></div>
+        </div>
     </section>
 
     <section id="achievements" class="slide">
