@@ -9,11 +9,18 @@
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f4f4f4;
+            background: linear-gradient(45deg, #ff0000, #ff7300, #ffeb00, #47ff00, #00ffcc, #0040ff, #7300ff);
+            background-size: 400% 400%;
+            animation: rainbowBG 10s infinite linear;
             scroll-behavior: smooth;
         }
+        @keyframes rainbowBG {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
         header {
-            background: #333;
+            background: rgba(0, 0, 0, 0.8);
             color: white;
             padding: 15px 0;
             text-align: center;
@@ -39,32 +46,32 @@
             text-decoration: none;
             font-size: 18px;
             padding: 12px 18px;
-            transition: background 0.3s, color 0.3s;
+            transition: background 0.5s, color 0.5s;
             border-radius: 8px;
         }
         nav ul li a:hover {
             background: white;
-            color: #333;
+            color: black;
         }
         .slide {
             padding: 100px 50px;
             text-align: center;
-            background: white;
+            background: rgba(255, 255, 255, 0.9);
             margin: 100px 20px 20px;
             box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
             border-radius: 12px;
-            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+            transition: transform 0.5s ease-in-out, box-shadow 0.5s ease-in-out;
         }
         .slide:hover {
-            transform: scale(1.05);
-            box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+            transform: scale(1.08);
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
         }
         h2 {
-            color: #333;
+            color: #222;
         }
         p, ul {
             font-size: 18px;
-            color: #555;
+            color: #444;
         }
         .contact-form {
             display: flex;
@@ -85,13 +92,13 @@
             padding: 10px 20px;
             border: none;
             cursor: pointer;
-            transition: background 0.3s;
+            transition: background 0.5s;
         }
         .contact-form button:hover {
             background: #555;
         }
         footer {
-            background: #333;
+            background: rgba(0, 0, 0, 0.8);
             color: white;
             text-align: center;
             padding: 15px;
@@ -153,7 +160,7 @@
     
     <section id="contact" class="slide">
         <h2>Contact</h2>
-        <p>Email: G5281260@gmail.com</p>
+        <p>Email: jagadeeshg@example.com</p>
         <form class="contact-form">
             <input type="text" placeholder="Your Name" required>
             <input type="email" placeholder="Your Email" required>
