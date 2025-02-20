@@ -3,115 +3,94 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>3D Portfolio</title>
+    <title>Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-color: #f0f0f0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
             margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
         }
-
-        .container {
+        header {
+            background: #333;
+            color: white;
+            padding: 10px 0;
             text-align: center;
         }
-
-        .card-container {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
+        nav ul {
+            list-style: none;
+            padding: 0;
         }
-
-        .card {
-            width: 200px;
-            height: 300px;
-            perspective: 1000px; /* Sets the perspective for the 3D effect */
+        nav ul li {
+            display: inline;
+            margin: 0 15px;
         }
-
-        .card-inner {
-            position: relative;
-            width: 100%;
-            height: 100%;
-            transition: transform 0.6s; /* Smooth transition for the flip effect */
-            transform-style: preserve-3d; /* Allows child elements to maintain their 3D position */
-        }
-
-        .card:hover .card-inner {
-            transform: rotateY(180deg); /* Flips the card on hover */
-        }
-
-        .card-front, .card-back {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            backface-visibility: hidden; /* Hides the back side when facing away */
-            border: 1px solid #ccc;
-            border-radius: 10px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            background-color: white;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-        }
-
-        .card-front {
-            z-index: 2; /* Ensures the front is on top */
-        }
-
-        .card-back {
-            transform: rotateY(180deg); /* Rotates the back side to face away initially */
-            background-color: #4CAF50; /* Different background color for the back */
+        nav ul li a {
             color: white;
+            text-decoration: none;
+            font-size: 18px;
+        }
+        .slide {
+            padding: 50px;
+            text-align: center;
+            background: white;
+            margin: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+        }
+        h2 {
+            color: #333;
+        }
+        p {
+            font-size: 16px;
+            color: #666;
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <h1>My 3D Portfolio</h1>
-        <div class="card-container">
-            <div class="card">
-                <div class="card-inner">
-                    <div class="card-front">
-                        <h2>Project 1</h2>
-                        <p>Short description of project 1.</p>
-                    </div>
-                    <div class="card-back">
-                        <h2>Project 1 Details</h2>
-                        <p>More information about project 1.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="card">
-                <div class="card-inner">
-                    <div class="card-front">
-                        <h2>Project 2</h2>
-                        <p>Short description of project 2.</p>
-                    </div>
-                    <div class="card-back">
-                        <h2>Project 2 Details</h2>
-                        <p>More information about project 2.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="card">
-                <div class="card-inner">
-                    <div class="card-front">
-                        <h2>Project 3</h2>
-                        <p>Short description of project 3.</p>
-                    </div>
-                    <div class="card-back">
-                        <h2>Project 3 Details</h2>
-                        <p>More information about project 3.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+    <header>
+        <h1>My Portfolio</h1>
+        <nav>
+            <ul>
+                <li><a href="#myself">Myself</a></li>
+                <li><a href="#education">Education</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#achievements">Achievements</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <section id="myself" class="slide">
+        <h2>About Me</h2>
+        <p>Welcome to my portfolio! I am a passionate web developer.</p>
+    </section>
+
+    <section id="education" class="slide">
+        <h2>Education</h2>
+        <p>Details about my academic background.</p>
+    </section>
+    
+    <section id="skills" class="slide">
+        <h2>Skills</h2>
+        <p>My technical and soft skills.</p>
+    </section>
+
+    <section id="achievements" class="slide">
+        <h2>Achievements</h2>
+        <p>My accomplishments and recognitions.</p>
+    </section>
+    
     <script>
-        // You can add any JavaScript functionality here if needed
+        document.querySelectorAll('nav ul li a').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href').substring(1);
+                document.getElementById(targetId).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
     </script>
 </body>
 </html>
