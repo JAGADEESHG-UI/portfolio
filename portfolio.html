@@ -4,18 +4,24 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Jagadeesh G - Portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <style>
-        /* General Styling */
-        body {
-            font-family: 'Poppins', sans-serif;
+        /* Global Styles */
+        * {
             margin: 0;
             padding: 0;
-            background: url('nature-bg.jpg') no-repeat center center/cover;
-            color: #2d3a22;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
             scroll-behavior: smooth;
         }
+        
+        body {
+            background: url('nature-bg.jpg') no-repeat center center/cover;
+            color: white;
+            overflow-x: hidden;
+        }
 
-        /* Header */
+        /* Navbar */
         header {
             background: rgba(34, 49, 24, 0.9);
             color: white;
@@ -26,7 +32,7 @@
             top: 0;
             left: 0;
             z-index: 1000;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: 0.3s ease-in-out;
         }
 
         nav ul {
@@ -37,16 +43,12 @@
             gap: 25px;
         }
 
-        nav ul li {
-            display: inline;
-        }
-
         nav ul li a {
             color: white;
             text-decoration: none;
             font-size: 18px;
             padding: 12px 18px;
-            transition: background 0.5s, color 0.5s;
+            transition: 0.5s;
             border-radius: 8px;
         }
 
@@ -55,23 +57,47 @@
             color: #2d3a22;
         }
 
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            background: rgba(0, 0, 0, 0.4);
+            backdrop-filter: blur(5px);
+            position: relative;
+        }
+
+        .hero h1 {
+            font-size: 50px;
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        .hero p {
+            font-size: 22px;
+            opacity: 0.8;
+            animation: slideUp 2s ease-in-out;
+        }
+
         /* Sections */
-        .slide {
+        .section {
             padding: 100px 50px;
             text-align: center;
-            background: rgba(255, 255, 255, 0.9);
-            margin: 120px 20px 20px;
-            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(5px);
             border-radius: 12px;
-            transition: transform 0.5s ease-in-out, box-shadow 0.5s ease-in-out;
+            margin: 100px 20px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
         }
 
-        .slide:hover {
-            transform: scale(1.05);
-            box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+        .section h2 {
+            font-size: 28px;
+            margin-bottom: 20px;
         }
 
-        /* Skills Section */
+        /* Skills */
         .skills-container {
             display: flex;
             justify-content: center;
@@ -85,11 +111,10 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            border-radius: 50%;
-            background: #f3f8ee;
+            border-radius: 10px;
+            background: rgba(255, 255, 255, 0.2);
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            transition: transform 0.3s ease-in-out;
-            border: 3px solid #2d3a22;
+            transition: 0.3s ease-in-out;
         }
 
         .skill:hover {
@@ -102,7 +127,7 @@
             object-fit: contain;
         }
 
-        /* Contact Section */
+        /* Contact */
         .contact-form input, 
         .contact-form textarea, 
         .contact-form button {
@@ -113,10 +138,6 @@
             border-radius: 6px;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
             font-size: 16px;
-        }
-
-        .contact-form textarea {
-            resize: none;
         }
 
         .contact-form button {
@@ -131,43 +152,44 @@
             background: #7b9e6d;
         }
 
-        /* Footer */
-        footer {
-            text-align: center;
-            padding: 15px;
-            background: rgba(34, 49, 24, 0.9);
-            color: white;
-            margin-top: 50px;
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
         }
+
+        @keyframes slideUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
     </style>
 </head>
 <body>
 
     <header>
-        <h1>🌿 My Portfolio</h1>
+        <h1>🌿 Jagadeesh G</h1>
         <nav>
             <ul>
-                <li><a href="#myself">Myself</a></li>
-                <li><a href="#education">Education</a></li>
+                <li><a href="#about">About</a></li>
                 <li><a href="#skills">Skills</a></li>
-                <li><a href="#achievements">Achievements</a></li>
                 <li><a href="#projects">Projects</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
         </nav>
     </header>
 
-    <section id="myself" class="slide">
+    <section class="hero">
+        <h1>Welcome to My Portfolio</h1>
+        <p>Nature, Technology & Creativity Combined</p>
+    </section>
+
+    <section id="about" class="section">
         <h2>About Me</h2>
-        <p>I am Jagadeesh G, a passionate web developer with a love for nature and technology.</p>
+        <p>I am Jagadeesh G, a passionate web developer with a love for both nature and technology.</p>
     </section>
 
-    <section id="education" class="slide">
-        <h2>Education</h2>
-        <p>Completed Intermediate with a focus on computer science and mathematics.</p>
-    </section>
-
-    <section id="skills" class="slide">
+    <section id="skills" class="section">
         <h2>Skills</h2>
         <div class="skills-container">
             <div class="skill"><img src="python-logo.png" alt="Python"></div>
@@ -177,26 +199,8 @@
         </div>
     </section>
 
-    <section id="achievements" class="slide">
-        <h2>Achievements</h2>
-        <ul>
-            <li>2-1 Semester Topper in Cyber Security</li>
-            <li>Developed a personal portfolio website</li>
-        </ul>
-    </section>
-
-    <section id="projects" class="slide">
-        <h2>Projects</h2>
-        <ul>
-            <li>Portfolio Website - A personal project showcasing my skills and experience.</li>
-            <li>Weather App - A web application that fetches real-time weather data.</li>
-            <li>Task Manager - A simple to-do app with a database backend.</li>
-        </ul>
-    </section>
-
-    <section id="contact" class="slide">
+    <section id="contact" class="section">
         <h2>Contact</h2>
-        <p>Email: jagadeeshg@example.com</p>
         <form class="contact-form">
             <input type="text" placeholder="Your Name" required>
             <input type="email" placeholder="Your Email" required>
