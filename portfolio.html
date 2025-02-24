@@ -3,24 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio</title>
+    <title>Jagadeesh G - Portfolio</title>
     <style>
+        /* General Styling */
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Poppins', sans-serif;
             margin: 0;
             padding: 0;
-            background: linear-gradient(45deg, #ff0000, #ff7300, #ffeb00, #47ff00, #00ffcc, #0040ff, #7300ff);
-            background-size: 400% 400%;
-            animation: rainbowBG 10s infinite linear;
+            background: url('nature-bg.jpg') no-repeat center center/cover;
+            color: #2d3a22;
             scroll-behavior: smooth;
         }
-        @keyframes rainbowBG {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
-        }
+
+        /* Header */
         header {
-            background: rgba(0, 0, 0, 0.8);
+            background: rgba(34, 49, 24, 0.9);
             color: white;
             padding: 15px 0;
             text-align: center;
@@ -31,6 +28,7 @@
             z-index: 1000;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
         }
+
         nav ul {
             list-style: none;
             padding: 0;
@@ -38,9 +36,11 @@
             justify-content: center;
             gap: 25px;
         }
+
         nav ul li {
             display: inline;
         }
+
         nav ul li a {
             color: white;
             text-decoration: none;
@@ -49,53 +49,102 @@
             transition: background 0.5s, color 0.5s;
             border-radius: 8px;
         }
+
         nav ul li a:hover {
-            background: white;
-            color: black;
+            background: #a3c293;
+            color: #2d3a22;
         }
+
+        /* Sections */
         .slide {
             padding: 100px 50px;
             text-align: center;
             background: rgba(255, 255, 255, 0.9);
-            margin: 100px 20px 20px;
+            margin: 120px 20px 20px;
             box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
             border-radius: 12px;
             transition: transform 0.5s ease-in-out, box-shadow 0.5s ease-in-out;
         }
+
         .slide:hover {
-            transform: scale(1.08);
+            transform: scale(1.05);
             box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
         }
+
+        /* Skills Section */
         .skills-container {
             display: flex;
             justify-content: center;
             gap: 20px;
             flex-wrap: wrap;
         }
+
         .skill {
-            width: 100px;
-            height: 100px;
+            width: 120px;
+            height: 120px;
             display: flex;
             align-items: center;
             justify-content: center;
-            border-radius: 10px;
-            background: white;
+            border-radius: 50%;
+            background: #f3f8ee;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
             transition: transform 0.3s ease-in-out;
+            border: 3px solid #2d3a22;
         }
+
         .skill:hover {
             transform: scale(1.1);
         }
+
         .skill img {
-            width: 80%;
-            height: 80%;
+            width: 70%;
+            height: 70%;
             object-fit: contain;
+        }
+
+        /* Contact Section */
+        .contact-form input, 
+        .contact-form textarea, 
+        .contact-form button {
+            width: 100%;
+            padding: 12px;
+            margin: 8px 0;
+            border: none;
+            border-radius: 6px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            font-size: 16px;
+        }
+
+        .contact-form textarea {
+            resize: none;
+        }
+
+        .contact-form button {
+            background: #a3c293;
+            color: #2d3a22;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .contact-form button:hover {
+            background: #7b9e6d;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 15px;
+            background: rgba(34, 49, 24, 0.9);
+            color: white;
+            margin-top: 50px;
         }
     </style>
 </head>
 <body>
+
     <header>
-        <h1>My Portfolio</h1>
+        <h1>🌿 My Portfolio</h1>
         <nav>
             <ul>
                 <li><a href="#myself">Myself</a></li>
@@ -107,17 +156,17 @@
             </ul>
         </nav>
     </header>
-    
+
     <section id="myself" class="slide">
         <h2>About Me</h2>
-        <p>I am Jagadeesh G, a passionate web developer with a strong interest in coding and software development.</p>
+        <p>I am Jagadeesh G, a passionate web developer with a love for nature and technology.</p>
     </section>
 
     <section id="education" class="slide">
         <h2>Education</h2>
         <p>Completed Intermediate with a focus on computer science and mathematics.</p>
     </section>
-    
+
     <section id="skills" class="slide">
         <h2>Skills</h2>
         <div class="skills-container">
@@ -144,7 +193,7 @@
             <li>Task Manager - A simple to-do app with a database backend.</li>
         </ul>
     </section>
-    
+
     <section id="contact" class="slide">
         <h2>Contact</h2>
         <p>Email: jagadeeshg@example.com</p>
@@ -155,9 +204,10 @@
             <button type="submit">Send Message</button>
         </form>
     </section>
-    
+
     <footer>
         <p>&copy; 2025 Jagadeesh G. All Rights Reserved.</p>
     </footer>
+
 </body>
 </html>
